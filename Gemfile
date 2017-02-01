@@ -15,6 +15,8 @@ gem 'mysql2', '~> 0.3.19'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'
 
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 
 gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 # Use Uglifier as compressor for JavaScript assets
