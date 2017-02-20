@@ -18,6 +18,10 @@ gem 'bootstrap-sass'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
+
 gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
