@@ -1,4 +1,4 @@
-<% provide(:title, "Edit user") %>
+<% provide(:title, ApplicationHelper::EDIT_USER) %>
 <h1>Update your profile</h1>
 
 <div class="row">
@@ -15,10 +15,10 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
 
-        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.label :password_confirmation, ApplicationHelper::CONFIRM_PASS %>
         <%= f.password_field :password_confirmation %>
 
-        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <%= f.submit ApplicationHelper::SAVE_CHANGES, class: "btn btn-large btn-primary" %>
     <% end %>
 <br/>
     <%= gravatar_for @user %>

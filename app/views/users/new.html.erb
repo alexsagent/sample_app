@@ -1,4 +1,4 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, ApplicationHelper::SIGN_UP) %>
 <h1>Sign up</h1>
 
 <div class="row">
@@ -15,10 +15,10 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.label :password_confirmation, ApplicationHelper::CONFIRM %>
         <%= f.password_field :password_confirmation %>
 
-        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+        <%= f.submit ApplicationHelper::CRT_MY_ACC, class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

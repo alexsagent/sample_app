@@ -1,12 +1,9 @@
-<% provide(:title, 'About Us') %>
+<% provide(:title, ApplicationHelper::ABOUT_US) %>
 
-<h1>About Us</h1>
+<h1><%= ApplicationHelper::ABOUT_US%></h1>
 
 <p>
-  The <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  is a project to make a book and screencasts to teach web development
-  with <a href="http://rubyonrails.org/">Ruby on Rails</a>. This
-  is the sample application for the tutorial.
+  <%= ApplicationHelper::ABOUT_US_TEXT%>
 </p>
 </body>
 </html>
