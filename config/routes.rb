@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :maps
-
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
