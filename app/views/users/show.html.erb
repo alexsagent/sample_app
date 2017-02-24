@@ -17,4 +17,13 @@
         <%= will_paginate @microposts %>
     <% end %>
   </div>
+  <div class="span8">
+    <% if @user.maps.any? %>
+        <h3>Maps (<%= @user.maps.count %>)</h3>
+        <ol class="maps">
+          <%= render @maps %>
+        </ol>
+        <%= will_paginate @maps %>
+    <% end %>
+  </div>
 </div>

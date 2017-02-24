@@ -1,0 +1,13 @@
+<li>
+  <span class="content"><%= map.name %></span>
+  <span class="content"><%= map.description %></span>
+  <span class="content">Control points: <%= map.cp_number %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(map.created_at) %> ago.
+  </span>
+  <% if current_user?(map.user) %>
+      <%= link_to "delete", map, method: :delete,
+                  data: { confirm: "You sure?" },
+                  title: map.name %>
+  <% end %>
+</li>

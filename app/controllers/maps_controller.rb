@@ -4,7 +4,9 @@ class MapsController < ApplicationController
   # GET /maps
   # GET /maps.json
   def index
-    @maps = Map.all
+#    @maps = Map.all
+    @user = User.find(params[:id])
+    @maps = @user.maps.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /maps/1

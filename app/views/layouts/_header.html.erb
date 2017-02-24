@@ -20,6 +20,7 @@
           <li><%= link_to ApplicationHelper::HELP, help_path %></li>
           <% if signed_in? %>
               <li><%= link_to ApplicationHelper::USERS_LINK_NAME, users_path %></li>
+              <li><%= link_to ApplicationHelper::MAPS_LINK_NAME, maps_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account
                   <span class="caret"></span></a>
