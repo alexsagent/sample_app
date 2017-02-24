@@ -9,6 +9,7 @@ class MapsController < ApplicationController
     @maps = @user.maps.paginate(page: params[:page], per_page: 3)
   end
 
+
   # GET /maps/1
   # GET /maps/1.json
   def show
