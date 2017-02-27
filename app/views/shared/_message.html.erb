@@ -1,0 +1,6 @@
+<% if @message_items.any? %>
+
+      <%= render partial: 'shared/message_item', collection: @message_items %>
+
+      <div class="pagination"> <%= will_paginate @message_items %> </div>
+<% end %>

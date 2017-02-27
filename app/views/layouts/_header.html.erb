@@ -16,8 +16,6 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to ApplicationHelper::HOME_LINK_NAME, root_path %></li>
-          <li><%= link_to ApplicationHelper::HELP, help_path %></li>
           <% if signed_in? %>
               <li><%= link_to ApplicationHelper::USERS_LINK_NAME, users_path %></li>
               <li><%= link_to ApplicationHelper::MAPS_LINK_NAME, maps_path %></li>
@@ -32,6 +30,7 @@
                 </ul>
               </li>
           <% else %>
+              <li><%= link_to ApplicationHelper::HELP, help_path %></li>
               <li><%= link_to ApplicationHelper::SIGN_IN, signin_path %></li>
           <% end %>
 
