@@ -1,6 +1,9 @@
 <div class="row row-newspage">
   <div class="col-md-2">
     <img src="<%= message_item.image %>" class="img-rounded"/>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(message_item.created_at) %> ago.
+    </span>
   </div>
   <div class="col-md-10">
     <h2><%= message_item.name %></h2>
@@ -10,12 +13,11 @@
     </p>
 
     <p>
-      <a class="btn" href="<%= message_item.id %>">View details...</a>
+      <a class="btn" href="<%= messages_path %>/<%= message_item.id %>">View details...</a>
     </p>
   </div>
+
 </div>
-<span class="timestamp">
-    Posted <%= time_ago_in_words(message_item.created_at) %> ago.
-</span>
+
 
 
