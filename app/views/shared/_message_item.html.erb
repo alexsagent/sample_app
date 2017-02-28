@@ -1,23 +1,21 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-2">
-          <img src="<%= message_item.image %>" class="img-rounded" />
-        </div>
-        <div class="col-md-10">
-          <h2><%= message_item.name %></h2>
-          <p>
-            <%= message_item.description %>
-          </p>
-          <p>
-            <a class="btn" href="<%= message_item.id %>">View details...</a>
-          </p>
-        </div>
-      </div>
-      <span class="timestamp">
-        Posted <%= time_ago_in_words(message_item.created_at) %> ago.
-      </span>
-    </div>
+<div class="row row-newspage">
+  <div class="col-md-2">
+    <img src="<%= message_item.image %>" class="img-rounded"/>
+  </div>
+  <div class="col-md-10">
+    <h2><%= message_item.name %></h2>
+
+    <p>
+      <%= message_item.description %>
+    </p>
+
+    <p>
+      <a class="btn" href="<%= message_item.id %>">View details...</a>
+    </p>
   </div>
 </div>
+<span class="timestamp">
+    Posted <%= time_ago_in_words(message_item.created_at) %> ago.
+</span>
+
+

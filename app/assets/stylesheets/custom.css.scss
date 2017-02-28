@@ -1,6 +1,4 @@
-
 /* mixins, variables, etc. */
-
 
 $grayMediumLight: #eaeaea;
 $grayLight: #7f7380;
@@ -23,21 +21,24 @@ body {
   padding-top: 60px;
 }
 
+/*
 section {
   overflow: auto;
 }
-
+*/
+/*
 textarea {
   resize: vertical;
 }
-
+*/
+/*
 .center {
   text-align: center;
   h1 {
     margin-bottom: 10px;
   }
 }
-
+*/
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,7 +53,7 @@ h1 {
 }
 
 /* header */
-
+/*
 #logo {
   float: left;
   margin-right: 10px;
@@ -68,7 +69,7 @@ h1 {
     text-decoration: none;
   }
 }
-
+*/
 /* footer */
 
 footer {
@@ -106,7 +107,7 @@ footer {
 }
 
 /* sidebar */
-
+/*
 aside {
   section {
     padding: 10px 0;
@@ -129,11 +130,12 @@ aside {
     }
   }
 }
-
+*/
 .gravatar {
   float: left;
   margin-right: 10px;
 }
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -179,22 +181,25 @@ input {
   list-style: none;
   margin: 10px 0 0 0;
 
-
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
 }
+
 .content {
   display: block;
 }
+
 .timestamp {
   color: $grayLight;
 }
+
 .gravatar {
   float: left;
   margin-right: 10px;
 }
+
 aside {
   textarea {
     height: 100px;
@@ -212,4 +217,78 @@ aside {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+}
+
+.row-newspage {
+  padding-top: 30px;
+}
+
+/* digg pagination*/
+
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */
+}
+
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: 0.2em 0.5em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+
+.digg_pagination .disabled {
+  color: #999999;
+  border: 1px solid #dddddd;
+}
+
+.digg_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #2e6ab1;
+  color: white;
+  border: 1px solid #2e6ab1;
+}
+
+.digg_pagination a {
+  text-decoration: none;
+  color: #105cb6;
+  border: 1px solid #9aafe5;
+}
+
+.digg_pagination a:hover, .digg_pagination a:focus {
+  color: #000033;
+  border-color: #000033;
+}
+
+.digg_pagination .page_info {
+  background: #2e6ab1;
+  color: white;
+  padding: 0.4em 0.6em;
+  width: 22em;
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+
+.digg_pagination .page_info b {
+  color: #000033;
+  background: #6aa6ed;
+  padding: 0.1em 0.25em;
+}
+
+.digg_pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .digg_pagination {
+  height: 1%;
+}
+
+*:first-child + html .digg_pagination {
+  overflow: hidden;
 }
