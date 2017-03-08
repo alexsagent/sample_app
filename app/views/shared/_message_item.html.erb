@@ -1,11 +1,11 @@
 <div class="row row-newspage">
   <div class="col-md-2">
-    <a class="btn" href="<%= messages_path %>/<%= message_item.id %>">
+    <a class="btn" style="padding: 0px 0px" href="<%= messages_path %>/<%= message_item.id %>">
         <img src="<%= message_item.image %>" class="img-rounded"/>
     </a>
-    <span class="timestamp">
+    <div class="timestamp">
       Posted <%= time_ago_in_words(message_item.created_at) %> ago.
-    </span>
+    </div>
   </div>
   <div class="col-md-10">
     <h2><%= message_item.name %></h2>
