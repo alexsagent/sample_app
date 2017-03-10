@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   #before_action :signed_in_user, only: [:index, :edit, :update]
   before_action :correct_user,   only: [:show, :edit, :update]
   before_action :admin_user,     only: :destroy
-  #before_action :admin_user
+  #before_action :admin_user t
 
   def new
     @user = User.new

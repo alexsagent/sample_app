@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   before_action :admin_user
 
+
   # GET /messages
   # GET /messages.json
   def index
