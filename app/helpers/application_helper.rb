@@ -22,7 +22,9 @@ ALL_USERS = 'All Users'
 CONFIRM = 'Confirmation'
 CRT_MY_ACC = 'Create my account'
 HELP = 'Help'
-
+MESSAGES = 'News'
+EDIT_LINK = 'Edit'
+DELETE_LINK = 'Delete'
 
 
 

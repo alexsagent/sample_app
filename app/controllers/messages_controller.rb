@@ -1,10 +1,13 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user
 
   # GET /messages
   # GET /messages.json
   def index
     @messages = Message.all
+    @message_items = Message.paginate(page: params[:page], per_page: 4)
+    @message_controller = true
   end
 
   # GET /messages/1
@@ -72,4 +75,9 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:user_id, :name, :description, :image)
     end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
+
 end

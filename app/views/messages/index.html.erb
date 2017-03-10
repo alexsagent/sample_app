@@ -1,4 +1,12 @@
-<h1>Listing messages</h1>
+<h1>News List</h1>
+
+
+<%= render 'shared/message' %>
+
+
+
+
+
 
 <table>
   <thead>
@@ -19,8 +27,8 @@
         <td><%= message.description %></td>
         <td><%= message.image %></td>
         <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
-        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_message_path(message), class: 'btn' %></td>
+        <td><%= link_to 'Destroy', message, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
