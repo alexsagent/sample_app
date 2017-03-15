@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user
+  before_action :admin_user, only: [:destroy, :edit]
 
 
   # GET /messages
@@ -77,8 +77,10 @@ class MessagesController < ApplicationController
       params.require(:message).permit(:user_id, :name, :description, :image)
     end
 
+
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_url) unless current_user && current_user.admin?
   end
+
 
 end
