@@ -1,11 +1,23 @@
 <h1>News List</h1>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <%= link_to 'New Message', new_message_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
 
 <%= render 'shared/message' %>
 
-
-
-<table>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'New Message', new_message_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<!--<table>
   <thead>
     <tr>
       <th>User</th>
@@ -29,8 +41,6 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table>-->
 
-<br>
 
-<%= link_to 'New Message', new_message_path %>

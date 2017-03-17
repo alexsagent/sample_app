@@ -1,11 +1,19 @@
 <% if @message_items.any? %>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-            <%= render partial: 'shared/message_item', collection: @message_items %>
+
+
+
+          <div class="digg_pagination"> <%= will_paginate @message_items %> </div>
+                <%= render partial: 'shared/message_item', collection: @message_items %>
+          <div class="digg_pagination"> <%= will_paginate @message_items %> </div>
+
         </div>
       </div>
     </div>
-    <div class="digg_pagination"> <%= will_paginate @message_items %> </div>
+
+
 <% end %>
 
