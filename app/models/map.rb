@@ -6,10 +6,10 @@ class Map < ActiveRecord::Base
 
   validates_processing_of :image
   validate :image_size_validation
-  validates :user_id, presence: true
-  validates :name, presence: true, length: { maximum: 150 }
-  validates :image, presence: true
-  validates :cp_number, numericality: {only_integer: true, greater_than_or_equal_to: 2, less_than_or_equal_to: 100}
+  #validates :user_id, presence: true
+  #validates :name, presence: true, length: { maximum: 150 }
+  #validates :image, presence: true
+  #validates :cp_number, numericality: {only_integer: true, greater_than_or_equal_to: 2, less_than_or_equal_to: 100}
 
   private
   def image_size_validation
