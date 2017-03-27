@@ -1,10 +1,10 @@
 class Map < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
+
 
   belongs_to :user
   default_scope -> { order('created_at DESC') }
 
-  validates_processing_of :image
+  #validates_processing_of :image
   validate :image_size_validation
   #validates :user_id, presence: true
   #validates :name, presence: true, length: { maximum: 150 }

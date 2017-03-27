@@ -12,28 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control'%>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description , class: 'form-control'%>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= image_tag @message.image %>
   </div>
+    <div class="field">
+      <label class="control-label">Select File</label>
+      <input id="messageImage" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
+    </div>
+    <br>
   <div class="actions">
     <%= f.submit %>
   </div>
 
-
-    <label class="control-label">Select File</label>
-    <input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
 
 
 
