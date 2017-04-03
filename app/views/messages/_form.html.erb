@@ -24,8 +24,8 @@
     <%= image_tag @message.image %>
   </div>
     <div class="field">
-      <label class="control-label">Select File</label>
-      <input id="messageImage" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
+      <%= f.label :image, 'Select File', class: 'control-label' %>
+      <%= f.file_field :image, class: 'file', 'multiple data-show-upload' => false, 'data-show-caption' => true %><br>
     </div>
     <br>
   <div class="actions">

@@ -17,7 +17,7 @@ gem 'sass-rails', '~> 4.0.3'
 
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
-
+gem 'paperclip', '~> 4.2'
 
 gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 # Use Uglifier as compressor for JavaScript assets
