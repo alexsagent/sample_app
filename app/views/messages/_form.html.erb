@@ -21,18 +21,18 @@
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= image_tag @message.image %>
+    <% if @message.image.file?%>
+        <%= link_to image_tag(@message.image.url(:thumb), class: 'media-object'), @message.image.url, target: '_blank' %>
+    <% end %>
   </div>
     <div class="field">
       <%= f.label :image, 'Select File', class: 'control-label' %>
       <%= f.file_field :image, class: 'file', 'multiple data-show-upload' => false, 'data-show-caption' => true %><br>
     </div>
     <br>
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit nil, class: 'btn btn-primary', style: 'width:140px' %>
   </div>
-
-
-
-
+<br/>
+    <br/>
 <% end %>
