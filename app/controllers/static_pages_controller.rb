@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 3)
     end
     @message_items = Message.paginate(page: params[:page], per_page: 4)
-
+    session[:isMainPage] = 'true'
   end
 
   def help

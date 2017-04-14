@@ -12,6 +12,10 @@
 
     </div>
     </br>
-    <%= link_to 'Back', root_path %>
+    <% if session[:isMainPage] == 'false' %>
+        <%= link_to 'Back', messages_path %>
+    <% else %>
+        <%= link_to 'Back', root_path %>
+    <% end %>
   </div>
 </div>

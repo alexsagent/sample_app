@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    session[:isMainPage] = 'false'
     @messages = Message.all
     @message_items = Message.paginate(page: params[:page], per_page: 4)
     @message_controller = true
@@ -30,10 +31,12 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    session[:isMainPage] = 'false'
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+
+        format.html { redirect_to @message, info: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
@@ -45,9 +48,10 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
   def update
+    session[:isMainPage] = 'false'
     respond_to do |format|
       if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
+        format.html { redirect_to @message, info: 'Message was successfully updated.' }
         format.json { render :show, status: :ok, location: @message }
       else
         format.html { render :edit }
@@ -61,7 +65,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
+      format.html { redirect_to messages_url, info: 'Message was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
