@@ -8,23 +8,26 @@
   <div class="col-md-10">
     <h2><%= message_item.name %></h2>
 
-    <p>
-      <%= message_item.description[0,200] %>...
-    </p>
-
-
-    <% if (current_user && current_user.admin && @message_controller != nil) %>
+    <% if (message_item.description.size > 200)%>
         <p>
-          <%= link_to ApplicationHelper::EDIT_LINK, edit_message_path(message_item), class: 'btn' %>
-          <%= link_to ApplicationHelper::DELETE_LINK, message_item, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= message_item.description[0,200] %>...
         </p>
     <% else %>
-    <p>
-        <a class="btn" href="<%= messages_path %>/<%= message_item.id %>">View details....</a>
-    </p>
+        <p>
+          <%= message_item.description %>
+        </p>
     <% end %>
   </div>
-
+  <% if (current_user && current_user.admin && @message_controller != nil) %>
+      <p>
+        <%= link_to ApplicationHelper::EDIT_LINK, edit_message_path(message_item), class: 'btn' %>
+        <%= link_to ApplicationHelper::DELETE_LINK, message_item, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+  <% else %>
+      <p>
+        <a class="btn" href="<%= messages_path %>/<%= message_item.id %>">View details....</a>
+      </p>
+  <% end %>
 </div>
 
 

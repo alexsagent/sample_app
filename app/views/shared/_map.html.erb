@@ -1,0 +1,18 @@
+<% if @map_items.any? %>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+
+
+
+          <div class="digg_pagination"> <%= will_paginate @map_items %> </div>
+                <%= render partial: 'shared/map_item', collection: @map_items %>
+          <div class="digg_pagination"> <%= will_paginate @map_items %> </div>
+
+        </div>
+      </div>
+    </div>
+
+
+<% end %>

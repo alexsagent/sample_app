@@ -5,14 +5,16 @@ class MapsController < ApplicationController
   # GET /maps.json
   def index
 #    @maps = Map.all
-    @maps = Map.paginate(page: params[:page], per_page: 3)
-
+    @user = current_user
+    #@maps = @user.maps.paginate(page: params[:page], per_page: 3)
+    @map_items = @user.maps.paginate(page: params[:page], per_page: 3)
   end
 
 
   # GET /maps/1
   # GET /maps/1.json
   def show
+    @map = Map.find(params[:id])
   end
 
   # GET /maps/new
@@ -45,7 +47,7 @@ class MapsController < ApplicationController
   def update
     respond_to do |format|
       if @map.update(map_params)
-        format.html { redirect_to @map, notice: 'Map was successfully updated.' }
+        format.html { redirect_to @map, info: 'Map was successfully updated.' }
         format.json { render :show, status: :ok, location: @map }
       else
         format.html { render :edit }
@@ -59,7 +61,7 @@ class MapsController < ApplicationController
   def destroy
     @map.destroy
     respond_to do |format|
-      format.html { redirect_to maps_url, notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to maps_url, info:  'Map was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,6 +74,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:name, :user_id, :image, :description, :cp_number, :remove_image)
+      params.require(:map).permit(:name, :user_id, :image, :description, :cp_number)
     end
 end

@@ -1,0 +1,30 @@
+<div class="row row-newspage">
+  <div class="col-md-2">
+    <%= link_to image_tag(map_item.image.url(:thumb), class: 'media-object img-rounded'), maps_path + '/' + map_item.id.to_s, class: 'btn', style: 'padding: 0px 0px' %>
+    <div class="timestamp">
+      Added <%= time_ago_in_words(map_item.created_at) %> ago.
+    </div>
+  </div>
+  <div class="col-md-10">
+    <h2><%= map_item.name %></h2>
+    <% if (map_item.description.size > 200)%>
+        <p>
+          <%= map_item.description[0,200] %>...
+        </p>
+    <% else %>
+        <p>
+          <%= map_item.description %>
+        </p>
+    <% end %>
+    <p>
+      <b>Control points: </b><%= map_item.cp_number %>
+    </p>
+  </div>
+  <% if (current_user) %>
+      <p>
+        <%= link_to ApplicationHelper::EDIT_LINK, edit_map_path(map_item), class: 'btn' %>
+        <%= link_to ApplicationHelper::DELETE_LINK, map_item, class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+  <% end %>
+
+</div>

@@ -1,18 +1,16 @@
 class Map < ActiveRecord::Base
 
-
   belongs_to :user
+
+  has_attached_file :image,
+                    validate_media_type: false,
+                    styles: { thumb: ["140x140#", :jpg],
+                              original: ['500x500>', :jpg]}
+  #do_not_validate_attachment_file_type :image
+  validates_attachment :image, presence: true,
+                       content_type: { content_type: ["image/jpeg", "image/jpg", "image/gif", "image/png"] }
+
   default_scope -> { order('created_at DESC') }
 
-  #validates_processing_of :image
-  validate :image_size_validation
-  #validates :user_id, presence: true
-  #validates :name, presence: true, length: { maximum: 150 }
-  #validates :image, presence: true
-  #validates :cp_number, numericality: {only_integer: true, greater_than_or_equal_to: 2, less_than_or_equal_to: 100}
 
-  private
-  def image_size_validation
-    errors[:image] << "should be less than 500KB" if image.size > 0.5.megabytes
-  end
 end

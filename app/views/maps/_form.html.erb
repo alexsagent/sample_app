@@ -1,43 +1,49 @@
 <%= form_for @map, html: {multipart: true} do |f| %>
     <% if @map.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@map.errors.count, "error") %> prohibited this map from being saved:</h2>
-
-          <ul>
-            <% @map.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
+          <div class="alert alert-danger">
+            <h2><%= pluralize(@map.errors.count, "error") %> prohibited this message from being saved:</h2>
+            <ul>
+              <% @map.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
     <% end %>
 
     <div class="field">
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
 
     <div class="field">
       <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="field">
-      <%= f.label :cp_number %><br>
-      <%= f.number_field :cp_number %>
+      <%= f.text_area :description, class: 'form-control'%>
     </div>
 
     <div class="field">
-      <%= f.label :image %><br>
-      <%= f.file_field :image %>
-      <% if f.object.image? %>
-          <%= image_tag f.object.image.thumb.url %>
-          <%= f.label :remove_image %>
-          <%= f.check_box :remove_image %>
+      <%= f.label :cp_number %><br>
+      <%= f.number_field :cp_number, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image %><br/>
+      <% if @map.image.file? %>
+          <%= link_to image_tag(@map.image.url(:thumb), class: 'media-object'), @map.image.url, target: '_blank' %>
       <% end %>
     </div>
 
-
-    <div class="actions">
-      <%= f.submit %>
+    <div class="field">
+      <%= f.label :image, 'Select File', class: 'control-label' %>
+      <%= f.file_field :image, class: 'file', 'multiple data-show-upload' => false, 'data-show-caption' => true %><br>
     </div>
+    <br/>
+
+    <div>
+      <%= f.submit nil, class: 'btn btn-primary', style: 'width:140px' %>
+    </div>
+    <br/>
+    <br/>
 
 <% end %>
