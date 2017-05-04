@@ -10,6 +10,8 @@ end
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 
+gem 'rails_12factor'
+
 gem 'mysql2', '~> 0.3.19'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
