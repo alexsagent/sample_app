@@ -1,29 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @map.name %>
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2><%= @map.name %></h2>
 
-<p>
-  <strong>User:</strong>
-  <%= @map.user_id %>
-</p>
+      <p>
+        <%= link_to image_tag(@map.image.url(:thumb), class: 'media-object img-rounded leftimg'), @map.image.url, target: '_blank' %>
+        <%= @map.description %>
+        <br>
+        <strong>Cp number:</strong>
+        <%= @map.cp_number %>
+      </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @map.image %>
-</p>
+    </div>
+    </br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @map.description %>
-</p>
+        <%= link_to 'Back', maps_path %>
 
-<p>
-  <strong>Cp number:</strong>
-  <%= @map.cp_number %>
-</p>
-
-<%= link_to 'Edit', edit_map_path(@map) %> |
-<%= link_to 'Back', maps_path %>
+  </div>
+</div>

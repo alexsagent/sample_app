@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   add_flash_types :info, :danger
 
-  #rescue_from Exception, with: :not_found
+  rescue_from Exception,  with: :not_found
 
 private
 
